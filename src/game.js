@@ -1,6 +1,6 @@
-import * as PIXI from "pixi.js";
-import "./board.js";
-import "./card.js";
+// import * as PIXI from "pixi.js";
+// import "./board.js";
+// import "./card.js";
 
 //pixi stuff
 const app = new PIXI.Application({ backgroundColor: 0x1099bb });
