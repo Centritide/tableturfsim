@@ -4,6 +4,7 @@ import "./card.js";
 
 //pixi stuff
 const app = new PIXI.Application({ backgroundColor: 0x1099bb });
+document.body.appendChild(app.view);
 const style = new PIXI.TextStyle({
     fontFamily: 'Arial',
     fontSize: 36,
