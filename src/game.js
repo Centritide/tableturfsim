@@ -1,8 +1,18 @@
-// import * as PIXI from "pixi.js";
-// import "./board.js";
-// import "./card.js";
-
 //pixi stuff
+var data;
+var request = new XMLHttpRequest();
+request.open("GET", "src/data/card_data.json", false);
+request.send(null);
+//request.onreadystatechange = function() {
+  if ( request.readyState === 4 && request.status === 200 ) {
+    data = JSON.parse(request.responseText);
+    console.log(data);
+    console.log(data.Splattershot.name);
+  }
+//}
+console.log(data);
+n = data.Splattershot.name;
+const basicText = new PIXI.Text(n);
 const app = new PIXI.Application({ backgroundColor: 0x1099bb });
 document.body.appendChild(app.view);
 const style = new PIXI.TextStyle({
@@ -22,8 +32,6 @@ const style = new PIXI.TextStyle({
     wordWrapWidth: 440,
     lineJoin: 'round',
 });
+app.stage.addChild(basicText);
 
-
-let cards = JSON.parse("./data/card_data.json");
-const basicText = new PIXI.Text(cards);
 
