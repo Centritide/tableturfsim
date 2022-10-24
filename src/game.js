@@ -1,19 +1,19 @@
 //pixi stuff
 var data;
 var request = new XMLHttpRequest();
-request.open("GET", "src/data/card_data.json", false);
+request.open("GET", "src/data/data2.json", false);
 request.send(null);
 //request.onreadystatechange = function() {
   if ( request.readyState === 4 && request.status === 200 ) {
     data = JSON.parse(request.responseText);
     console.log(data);
-    console.log(data.Splattershot.name);
+    console.log(data[0].Name);
   }
 //}
 console.log(data);
-n = data.Splattershot.name;
+n = data[0].Name;
 const basicText = new PIXI.Text(n);
-const app = new PIXI.Application({ backgroundColor: 0x1099bb });
+const app = new PIXI.Application({ backgroundColor: 0x551158 });
 document.body.appendChild(app.view);
 const style = new PIXI.TextStyle({
     fontFamily: 'Arial',
