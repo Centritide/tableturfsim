@@ -3,7 +3,7 @@ let card_data;
 const app = new PIXI.Application({ backgroundColor: 0x551158 });
 
 // fetch and load stuff as needed.
-fetch("data/data2.json").then((response) => {return response.json()}).then((data) => {
+fetch("/public/data/data2.json").then((response) => {return response.json()}).then((data) => {
   console.log(data);
   let a = data[0];
   console.log(a);

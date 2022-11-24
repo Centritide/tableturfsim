@@ -2,6 +2,8 @@ const envConfig = require("dotenv").config();
 const express = require("express");
 const Ably = require("ably");
 const app = express();
+app.use(express.static(__dirname));
+
 const {ABLY_API_KEY,PORT} = process.env;
 let globalChannel;
 let activeGameRooms = {};
