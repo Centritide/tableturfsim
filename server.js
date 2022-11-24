@@ -42,9 +42,11 @@ app.get("/", (request, response) => {
     "Origin, X-Requested-With, Content-Type, Accept"
   );
   if (++peopleAccessingTheWebsite > 2) {
+    console.log(peopleAccessingTheWebsite);
     response.sendFile(__dirname + "/deep_trawler.html");
   } else {
     response.sendFile(__dirname + "/game.html");
+    response.sendFile(__dirname + "/src/game.js");
   }
 });
 
