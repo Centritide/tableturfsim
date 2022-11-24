@@ -10,6 +10,7 @@ let activeGameRooms = {};
 let peopleAccessingTheWebsite = 0;
 let players = {};
 let playerChannels = {};
+let io = false;
 
 const realtime = new Ably.Realtime({
     key: ABLY_API_KEY,
@@ -43,8 +44,7 @@ app.get("/", (request, response) => {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
-  if (++peopleAccessingTheWebsite > 2) {
-    console.log(peopleAccessingTheWebsite);
+  if (++peopleAccessingTheWebsite > 2 && io) {
     response.sendFile(__dirname + "/deep_trawler.html");
   } else {
     response.sendFile(__dirname + "/game.html");

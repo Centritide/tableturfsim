@@ -9,7 +9,7 @@ function hostNewGame() {
   localStorage.setItem("isHost", true);
   localStorage.setItem("nickname", nickname);
   localStorage.setItem("roomCode", roomCode);
-  window.location.replace("/gameplay?roomCode=" + roomCode + "&isHost=true");
+  window.location.assign("/game?roomCode=" + roomCode + "&isHost=true");
 }
 
 function joinRoom() {
@@ -20,7 +20,7 @@ function joinRoom() {
   localStorage.setItem("isHost", false);
   localStorage.setItem("nickname", nickname);
   localStorage.setItem("roomCode", roomCode);
-  window.location.replace("/gameplay?roomCode=" + roomCode + "&isHost=false");
+  window.location.assign("/game?roomCode=" + roomCode + "&isHost=false");
 }
 
 function getRandomRoomId() {
