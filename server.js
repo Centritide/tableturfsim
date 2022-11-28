@@ -47,7 +47,7 @@ app.get("/", (request, response) => {
   if (++peopleAccessingTheWebsite > 2 && io) {
     response.sendFile(__dirname + "/deep_trawler.html");
   } else {
-    response.sendFile(__dirname + "/game.html");
+    response.sendFile(__dirname + "/home.html");
   }
 });
 
